@@ -37,11 +37,27 @@ public class Main {
 //
 //        System.out.println("nuevo empleado creado:"+newEmployee);
 
-        System.out.println("-------------actualizar--------------------");
-        int employeeToUpdateId=2;
-        Employee employeeToUpdate=em.find(Employee.class,employeeToUpdateId);
-        System.out.println("Empleado a modificar");
+//        System.out.println("-------------actualizar--------------------");
+//        int employeeToUpdateId=2;
+//        Employee employeeToUpdate=em.find(Employee.class,employeeToUpdateId);
+//        System.out.println("Empleado a modificar "+employeeToUpdate);
+//        employeeToUpdate.setMaSurname("jairo editado");
+//        employeeToUpdate.setPaSurname("pabon");
+//        employeeToUpdate.setSalary((float) 4500000);
+//        em.getTransaction().begin();
+//        em.merge(employeeToUpdate);
+//        em.getTransaction().commit();
+//
+//        System.out.println("empleado actualizado "+employeeToUpdate);
 
+        System.out.println("---------------eliminar----------------");
+        int employeeToDeleteId=21;
+        Employee employeetoDelete=em.find(Employee.class,employeeToDeleteId);
+        System.out.println("empleado a eliminar "+employeetoDelete);
+        em.getTransaction().begin();
+        em.remove(employeetoDelete);
+        em.getTransaction().commit();
+        em.close();
 
     }
 }
